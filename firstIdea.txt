@@ -1,0 +1,16 @@
+** Clon Linktree ** Link Group
+
+Diseño BackEnd
+-Tech Stack: NodeJs, Express
+-DataBase: Mongo
+Dependencias:
+- JWT
+- bcrypt
+- nodemailer
+- swagger
+- chai
+- supertest
+
+Resources:
+- users: registrarse, loggearse, formas de autenticacion auth2.0 y local. Relacionar rrss a user.
+- linkRRSS: CRUD de redes sociales asociado a cada usuario. (Autocompletado con rrss?)
