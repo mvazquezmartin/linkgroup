@@ -2,11 +2,12 @@ import passport from "passport";
 import jwt from "passport-jwt";
 import google from "passport-google-oauth20";
 import jwtConfig from "./jwtConifug.js";
-import cookieExtractor from "../utils/cookieExtracto.util.js";
+import cookieExtractor from "../utils/cookieExtractor.util.js";
 
 const JWT_KEY = jwtConfig.JWT_KEY;
 
 const JWTStrategy = jwt.Strategy;
+const ExtractJwt = jwt.ExtractJwt;
 const GoogleStrategy = google.Strategy;
 
 const initializePassport = () => {
@@ -14,7 +15,7 @@ const initializePassport = () => {
     "jwt",
     new JWTStrategy(
       {
-        jwtFromRequest: jwt.ExtractJwt.fromExtractors([cookieExtractor]),
+        jwtFromRequest: ExtractJwt.fromExtractors([cookieExtractor]),
         secretOrKey: JWT_KEY,
       },
       async (jwt_payload, done) => {
